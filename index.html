@@ -1,3 +1,156 @@
-Jogos e horarios da Copa Do Mundo 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Jogos - Copa do Mundo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-Nesse, site irá mostrar Todos os jogos da Copa Do Mundo.
+        h1 {
+            color: #1a472a; /* Verde característico */
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 15px 20px;
+        }
+
+        th {
+            background-color: #1a472a;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s ease;
+        }
+
+        .fase {
+            font-weight: bold;
+            color: #d4a373; /* Cor de destaque para a fase */
+        }
+
+        .destaque-brasil {
+            background-color: #e8f5e9 !important;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            th, td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cronograma de Jogos da Copa do Mundo</h1>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Horário (BRT)</th>
+                    <th>Confronto / Fase</th>
+                    <th>Estádio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11/06 (Quinta)</td>
+                    <td>13:00</td>
+                    <td>Jogo de Abertura (Grupo A)</td>
+                    <td>Estádio Azteca</td>
+                </tr>
+                <tr class="destaque-brasil">
+                    <td>12/06 (Sexta)</td>
+                    <td>16:00</td>
+                    <td>Brasil vs Adversário (Grupo B)</td>
+                    <td>Estádio Principal</td>
+                </tr>
+                <tr>
+                    <td>13/06 (Sábado)</td>
+                    <td>20:00</td>
+                    <td>Seleção C vs Seleção D</td>
+                    <td>Arena Local</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="4" style="background-color: #eee; text-align: center; font-weight: bold; color: #555;">
+                        Fase do Mata-Mata
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>27/06 (Sábado)</td>
+                    <td>12:00</td>
+                    <td class="fase">Oitavas de Final (Jogo 1)</td>
+                    <td>Estádio Internacional</td>
+                </tr>
+                <tr>
+                    <td>30/06 (Terça)</td>
+                    <td>16:00</td>
+                    <td class="fase">Oitavas de Final (Jogo 2)</td>
+                    <td>Estádio Nacional</td>
+                </tr>
+                <tr>
+                    <td>04/07 (Sábado)</td>
+                    <td>14:00</td>
+                    <td class="fase">Quartas de Final</td>
+                    <td>Estádio das Estrelas</td>
+                </tr>
+                <tr>
+                    <td>08/07 (Quarta)</td>
+                    <td>16:00</td>
+                    <td class="fase">Semifinal 1</td>
+                    <td>Arena Principal</td>
+                </tr>
+                <tr>
+                    <td>19/07 (Domingo)</td>
+                    <td>15:00</td>
+                    <td class="fase" style="color: #c1121f;">Grande Final 🏆</td>
+                    <td>Estádio Gigante</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
