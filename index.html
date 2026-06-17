@@ -3,154 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Jogos - Copa do Mundo</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            color: #1a472a; /* Verde característico */
-            text-align: center;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        th, td {
-            padding: 15px 20px;
-        }
-
-        th {
-            background-color: #1a472a;
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        tr:hover {
-            background-color: #e9ecef;
-            transition: background-color 0.3s ease;
-        }
-
-        .fase {
-            font-weight: bold;
-            color: #d4a373; /* Cor de destaque para a fase */
-        }
-
-        .destaque-brasil {
-            background-color: #e8f5e9 !important;
-            font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            th, td {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    <title>Minha Primeira Página Web</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Cronograma de Jogos da Copa do Mundo</h1>
+    <main class="container">
+        <h1>Bem-vindo à minha primeira página!</h1>
+        <p>Este é um projeto prático do curso da Alura para aprender HTML, CSS e JavaScript do zero.</p>
+        
+        <button id="botaoInterativo">Clique aqui!</button>
+        <p id="mensagemFeed" class="escondido">Parabéns! Você gerou a sua primeira interação na web! 🎉</p>
+    </main>
 
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Horário (BRT)</th>
-                    <th>Confronto / Fase</th>
-                    <th>Estádio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>11/06 (Quinta)</td>
-                    <td>13:00</td>
-                    <td>Jogo de Abertura (Grupo A)</td>
-                    <td>Estádio Azteca</td>
-                </tr>
-                <tr class="destaque-brasil">
-                    <td>12/06 (Sexta)</td>
-                    <td>16:00</td>
-                    <td>Brasil vs Adversário (Grupo B)</td>
-                    <td>Estádio Principal</td>
-                </tr>
-                <tr>
-                    <td>13/06 (Sábado)</td>
-                    <td>20:00</td>
-                    <td>Seleção C vs Seleção D</td>
-                    <td>Arena Local</td>
-                </tr>
-                
-                <tr>
-                    <td colspan="4" style="background-color: #eee; text-align: center; font-weight: bold; color: #555;">
-                        Fase do Mata-Mata
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>27/06 (Sábado)</td>
-                    <td>12:00</td>
-                    <td class="fase">Oitavas de Final (Jogo 1)</td>
-                    <td>Estádio Internacional</td>
-                </tr>
-                <tr>
-                    <td>30/06 (Terça)</td>
-                    <td>16:00</td>
-                    <td class="fase">Oitavas de Final (Jogo 2)</td>
-                    <td>Estádio Nacional</td>
-                </tr>
-                <tr>
-                    <td>04/07 (Sábado)</td>
-                    <td>14:00</td>
-                    <td class="fase">Quartas de Final</td>
-                    <td>Estádio das Estrelas</td>
-                </tr>
-                <tr>
-                    <td>08/07 (Quarta)</td>
-                    <td>16:00</td>
-                    <td class="fase">Semifinal 1</td>
-                    <td>Arena Principal</td>
-                </tr>
-                <tr>
-                    <td>19/07 (Domingo)</td>
-                    <td>15:00</td>
-                    <td class="fase" style="color: #c1121f;">Grande Final 🏆</td>
-                    <td>Estádio Gigante</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
+    <script src="app.js"></script>
 </body>
 </html>
+/* Configurações Gerais de Estilo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4A90E2;
+}
+
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+/* Classes Utilitárias */
+.escondido {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+    color: #2ECC71;
+    font-weight: bold;
+    margin-top: 20px;
+}
+// Seleciona os elementos do HTML que vão interagir
+const botao = document.getElementById('botaoInterativo');
+const mensagem = document.getElementById('mensagemFeed');
+
+// Adiciona um evento de escuta para o clique no botão
+botao.addEventListener('click', function() {
+    // Altera as classes do CSS para exibir o texto escondido
+    mensagem.classList.remove('escondido');
+    mensagem.classList.add('mostrar');
+    
+    // Opcional: Desabilita o botão após o clique
+    botao.textContent = "Clicado!";
+    botao.style.backgroundColor = "#95A5A6";
+    botao.disabled = true;
+});
