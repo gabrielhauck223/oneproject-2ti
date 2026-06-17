@@ -3,84 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Primeira Página Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Página Web - Primeira Interação</title>
+    
+    <style>
+        /* Configuração do fundo e alinhamento centralizado */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Caixa do conteúdo principal */
+        .cartao {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666666;
+            margin-bottom: 20px;
+        }
+
+        /* Alinhamento do campo de texto e botão */
+        .campo-grupo {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            width: 60%;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #764ba2;
+        }
+
+        button {
+            background-color: #764ba2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a377e;
+        }
+
+        /* Classes para mostrar ou esconder a mensagem de resposta */
+        .resultado-oculto {
+            display: none;
+        }
+
+        .resultado-visivel {
+            display: block;
+            margin-top: 25px;
+            font-size: 20px;
+            animation: aparecer 0.5s ease-in-out;
+        }
+
+        /* Efeito visual de surgimento suave */
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-    <main class="container">
-        <h1>Bem-vindo à minha primeira página!</h1>
-        <p>Este é um projeto prático do curso da Alura para aprender HTML, CSS e JavaScript do zero.</p>
+    <div class="cartao">
+        <h1>Descubra o Poder da Web!</h1>
+        <p>Digite seu nome abaixo para começar a interagir com a página:</p>
         
-        <button id="botaoInterativo">Clique aqui!</button>
-        <p id="mensagemFeed" class="escondido">Parabéns! Você gerou a sua primeira interação na web! 🎉</p>
-    </main>
+        <div class="campo-grupo">
+            <input type="text" id="campoNome" placeholder="Digite seu nome aqui...">
+            <button id="botaoEnviar">Enviar</button>
+        </div>
 
-    <script src="app.js"></script>
+        <h2 id="mensagemResultado" class="resultado-oculto"></h2>
+    </div>
+
+    <script>
+        // 1. Mapeia os elementos do HTML usando os IDs
+        const campoNome = document.getElementById('campoNome');
+        const botaoEnviar = document.getElementById('botaoEnviar');
+        const mensagemResultado = document.getElementById('mensagemResultado');
+
+        // 2. Função que realiza a lógica da primeira interação
+        function interagir() {
+            const nomeUsuario = campoNome.value.trim();
+
+            if (nomeUsuario === "") {
+                // Caso o usuário clique sem digitar nada
+                mensagemResultado.textContent = "Por favor, digite um nome válido! 🛠️";
+                mensagemResultado.className = "resultado-visivel";
+                mensagemResultado.style.color = "#c62828"; // Cor vermelha de aviso
+            } else {
+                // Caso o usuário digite um nome com sucesso
+                mensagemResultado.textContent = `Olá, ${nomeUsuario}! Você realizou sua primeira interação web! 🎉`;
+                mensagemResultado.className = "resultado-visivel";
+                mensagemResultado.style.color = "#2e7d32"; // Cor verde de sucesso
+            }
+        }
+
+        // 3. Ativa a função quando o botão for clicado
+        botaoEnviar.addEventListener('click', interagir);
+
+        // Extra: Ativa a função também se o usuário apertar "Enter" no teclado
+        campoNome.addEventListener('keypress', function(evento) {
+            if (evento.key === 'Enter') {
+                interagir();
+            }
+        });
+    </script>
+
 </body>
 </html>
-/* Configurações Gerais de Estilo */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #4A90E2;
-}
-
-button {
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #357ABD;
-}
-
-/* Classes Utilitárias */
-.escondido {
-    display: none;
-}
-
-.mostrar {
-    display: block;
-    color: #2ECC71;
-    font-weight: bold;
-    margin-top: 20px;
-}
-// Seleciona os elementos do HTML que vão interagir
-const botao = document.getElementById('botaoInterativo');
-const mensagem = document.getElementById('mensagemFeed');
-
-// Adiciona um evento de escuta para o clique no botão
-botao.addEventListener('click', function() {
-    // Altera as classes do CSS para exibir o texto escondido
-    mensagem.classList.remove('escondido');
-    mensagem.classList.add('mostrar');
-    
-    // Opcional: Desabilita o botão após o clique
-    botao.textContent = "Clicado!";
-    botao.style.backgroundColor = "#95A5A6";
-    botao.disabled = true;
-});
