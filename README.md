@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -35,52 +34,4 @@ body {
     text-align: center;
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #4A90E2;
-}
-
-button {
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #357ABD;
-}
-
-/* Classes Utilitárias */
-.escondido {
-    display: none;
-}
-
-.mostrar {
-    display: block;
-    color: #2ECC71;
-    font-weight: bold;
-    margin-top: 20px;
-}
-// Seleciona os elementos do HTML que vão interagir
-const botao = document.getElementById('botaoInterativo');
-const mensagem = document.getElementById('mensagemFeed');
-
-// Adiciona um evento de escuta para o clique no botão
-botao.addEventListener('click', function() {
-    // Altera as classes do CSS para exibir o texto escondido
-    mensagem.classList.remove('escondido');
-    mensagem.classList.add('mostrar');
-    
-    // Opcional: Desabilita o botão após o clique
-    botao.textContent = "Clicado!";
-    botao.style.backgroundColor = "#95A5A6";
-    botao.disabled = true;
-});
+    border-radius: 1
