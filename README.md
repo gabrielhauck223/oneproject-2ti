@@ -46,7 +46,7 @@
         <img src="ImgTec.png" alt="Logotipo">
         <div>
             <h2>Meu Primeiro Post</h2>
-            <p class="Artigo-Autor">Por: Leonel</p>
+            <p class="Artigo-Autor">Por: Gabriel</p>
             <p>Boas-Vindas Ao Meu Novo Blog!</p>
             <button>❤️ <span>0</span></button>
             <button> 👍 <span>0</span></button>
