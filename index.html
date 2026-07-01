@@ -3,145 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Web - Primeira Interacao</title>
-    
-    <style>
-        /* Configuracao do fundo e alinhamento centralizado */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Caixa do conteudo principal */
-        .cartao {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h1 {
-            color: #333333;
-            font-size: 24px;
-        }
-
-        p {
-            color: #666666;
-            margin-bottom: 20px;
-        }
-
-        /* Alinhamento do campo de texto e botao */
-        .campo-grupo {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        input {
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            outline: none;
-            width: 60%;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            border-color: #764ba2;
-        }
-
-        button {
-            background-color: #764ba2;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #5a377e;
-        }
-
-        /* Classes para mostrar ou esconder a mensagem de resposta */
-        .resultado-oculto {
-            display: none;
-        }
-
-        .resultado-visivel {
-            display: block;
-            margin-top: 25px;
-            font-size: 20px;
-            animation: aparecer 0.5s ease-in-out;
-        }
-
-        /* Efeito visual de surgimento suave */
-        @keyframes aparecer {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>Primeira Interação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="cartao">
-        <h1>Descubra o Poder da Web!</h1>
-        <p>Digite seu nome abaixo para comecar a interagir com a pagina:</p>
-        
-        <div class="campo-grupo">
-            <input type="text" id="campoNome" placeholder="Digite seu nome aqui...">
-            <button id="botaoEnviar">Enviar</button>
-        </div>
+    <h1>Bem-vindo!</h1>
 
-        <h2 id="mensagemResultado" class="resultado-oculto"></h2>
-    </div>
+    <p>Clique em um dos botões abaixo.</p>
 
-    <script>
-        // 1. Mapeia os elementos do HTML usando os IDs
-        const campoNome = document.getElementById('campoNome');
-        const botaoEnviar = document.getElementById('botaoEnviar');
-        const mensagemResultado = document.getElementById('mensagemResultado');
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+    <button onclick="mostrarAlerta()">Mostrar alerta</button>
 
-        // 2. Funcao que realiza a logica da primeira interacao
-        function interagir() {
-            const nomeUsuario = campoNome.value.trim();
-
-            if (nomeUsuario === "") {
-                // Caso o usuario clique sem digitar nada
-                mensagemResultado.textContent = "Por favor, digite um nome valido! ";
-                mensagemResultado.className = "resultado-visivel";
-                mensagemResultado.style.color = "#c62828"; // Cor vermelha de aviso
-            } else {
-                // Caso o usuario digite um nome com sucesso
-                mensagemResultado.textContent = `Ola, ${nomeUsuario}! Voce realizou sua primeira interacao web! `;
-                mensagemResultado.className = "resultado-visivel";
-                mensagemResultado.style.color = "#2e7d32"; // Cor verde de sucesso
-            }
-        }
-
-        // 3. Ativa a funcao quando o botao for clicado
-        botaoEnviar.addEventListener('click', interagir);
-
-        // Extra: Ativa a funcao tambem se o usuario apertar "Enter" no teclado
-        campoNome.addEventListener('keypress', function(evento) {
-            if (evento.key === 'Enter') {
-                interagir();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
