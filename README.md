@@ -1,70 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Primeira Página</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Site</title>
+    <style>
+        header {
+            background-color: #0873e6;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 5px solid rgb(0, 0, 0);
+        }
+
+        main {
+            background-color: #FFFFFF;
+            color: #0562c5;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            display: flex;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .Artigo-Autor {
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-
-    <div class="conteudo">
-        <h1>Olá, Mundo!</h1>
-        <p>Este é o meu primeiro projeto web do zero.</p>
-        
-        <button id="meuBotao">Clique Aqui</button>
-        
-        <p id="mensagem"></p>
-    </div>
-
-    <script src="script.js"></script>
+    <header>
+        <h1>Meu blog</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
+    <main>
+        <img src="ImgTec.png" alt="Logotipo">
+        <div>
+            <h2>Meu Primeiro Post</h2>
+            <p class="Artigo-Autor">Por: Leonel</p>
+            <p>Boas-Vindas Ao Meu Novo Blog!</p>
+            <button>❤️ <span>0</span></button>
+            <button> 👍 <span>0</span></button>
+        </div>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        botao.addEventListener("click", botaoClicado);
+
+        function botaoClicado() {
+            console.log("Botao Clicado");
+            let texto = botao.querySelector("span");
+            texto.textContent++;
+
+        }
+
+    })
+</script>
+
 </html>
-// 1. Selecionar o botão e o texto do HTML usando o ID
-const botao = document.getElementById('meuBotao');
-const mensagem = document.getElementById('mensagem');
-
-// 2. Criar a função que diz o que vai acontecer no clique
-function mostrarMensagem() {
-    mensagem.textContent = "Excelente! Conseguiste fazer a tua primeira interação!";
-    mensagem.style.color = "green";
-}
-
-// 3. Ativar o botão para que ele "escute" o clique do rato
-botao.addEventListener('click', mostrarMensagem);
-body {
-    font-family: Arial, sans-serif;
-    background-color: #eef2f3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.conteudo {
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-button {
-    background-color: #007bfc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#mensagem {
-    margin-top: 20px;
-    font-weight: bold;
-}
